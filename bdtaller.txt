@@ -1,0 +1,126 @@
+create table DEPARTAMENTO(
+	codigo int NOT NULL,
+	nombre varchar(30) NOT NULL,
+	primary key(codigo)
+);
+
+create table PRESUPUESTO(
+	codigo int NOT NULL,
+	valor int NOT NULL,
+	anio varchar(4) NOT NULL,
+	fkDepartamento int NOT NULL,
+	primary key(codigo)
+);
+
+create table SEDE(
+	codigo int NOT NULL,
+	nombre varchar(30) NOT NULL,
+	poblacion int NOT NULL,
+	fkEmpleado int NOT NULL,
+	primary key(codigo)
+);
+
+create table EMPLEADO(
+	id int NOT NULL,
+	nombre varchar(30) NOT NULL,
+	telefono varchar(15) NOT NULL,
+	fecIngreso date NOT NULL,
+	fkDepartamento int NOT NULL,
+	primary key(id)
+);
+
+create table HABILIDAD(
+	codigo int NOT NULL,
+	descripcion varchar(100) NOT NULL,
+	primary key(codigo)
+);
+
+create table DEP_SED(
+	fkDepartamento int NOT NULL,
+	fkSede int NOT NULL,
+	direccion varchar(15) NOT NULL
+);
+
+create table EMP_HAB(
+	fkEmpleado int NOT NULL,
+	fkHabilidad int NOT NULL,
+	salario int NOT NULL
+);
+
+create table SED_EMP(
+	fkEmpleado int NOT NULL,
+	fkSede int NOT NULL
+);
+
+alter table PRESUPUESTO
+	add constraint fkDepartamento
+	foreign key(fkDepartamento)
+	references DEPARTAMENTO(codigo);
+	
+alter table DEP_SED
+	add constraint fkDepartamento
+	foreign key(fkDepartamento)
+	references DEPARTAMENTO(codigo);
+	
+alter table DEP_SED
+	add constraint fkSede
+	foreign key(fkSede)
+	references SEDE(codigo);
+	
+alter table SEDE
+	add constraint fkEmpleado
+	foreign key(fkEmpleado)
+	references EMPLEADO(id);
+	
+alter table EMPLEADO
+	add constraint fkDepartamento
+	foreign key(fkDepartamento)
+	references DEPARTAMENTO(codigo);
+	
+alter table EMP_HAB
+	add constraint fkEmpleado
+	foreign key(fkEmpleado)
+	references EMPLEADO(id);
+	
+alter table EMP_HAB
+	add constraint fkHabilidad
+	foreign key(fkHabilidad)
+	references HABILIDAD(codigo);
+	
+alter table SED_EMP
+	add constraint fkEmpleado
+	foreign key(fkEmpleado)
+	references EMPLEADO(id);
+
+alter table SED_EMP
+	add constraint fkSede
+	foreign key(fkSede)
+	references SEDE(codigo);
+	
+insert into DEPARTAMENTO (codigo, nombre) values ('01', 'Sistemas');
+insert into DEPARTAMENTO (codigo, nombre) values ('02', 'Administracion');
+insert into DEPARTAMENTO (codigo, nombre) values ('03', 'Logistica');
+insert into DEPARTAMENTO (codigo, nombre) values ('04', 'Ventas');
+insert into DEPARTAMENTO (codigo, nombre) values ('05', 'Publicidad');
+insert into DEPARTAMENTO (codigo, nombre) values ('06', 'Estadistica');
+insert into DEPARTAMENTO (codigo, nombre) values ('07', 'Investigacion');
+insert into DEPARTAMENTO (codigo, nombre) values ('08', 'Recursos Humanos');
+insert into DEPARTAMENTO (codigo, nombre) values ('09', 'Salud Ocupacional');
+insert into DEPARTAMENTO (codigo, nombre) values ('10', 'Financiero');
+insert into DEPARTAMENTO (codigo, nombre) values ('11', 'Compras');
+insert into DEPARTAMENTO (codigo, nombre) values ('12', 'Comite de Direccion');
+insert into DEPARTAMENTO (codigo, nombre) values ('13', 'Direccion General');
+
+insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('001', '50000000' , '2018', '01');
+insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('002', '100000000' , '2017', '02');
+insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('003', '25000000' , '2020', '03');
+insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('004', '150000000' , '2020', '01');
+insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('005', '250000000' , '2018', '07');
+insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('006', '50000000' , '2019', '05');
+insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('007', '125000000' , '2019', '09');
+insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('008', '200000000' , '2018', '11');
+insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('009', '175000000' , '2020', '04');
+insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('010', '75000000' , '2016', '10');
+insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('011', '87500000' , '2019', '08');
+
+insert into SEDE (codigo, nombre, poblacion) values ('101', 'Industrial' , '100');
