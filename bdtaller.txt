@@ -127,5 +127,7 @@ insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('008', '20
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('009', '175000000' , '2020', '04');
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('010', '75000000' , '2016', '10');
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('011', '87500000' , '2019', '08');
+insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('012', '175000000' , '2018', '11');
+
 
 insert into SEDE (codigo, nombre, poblacion) values ('101', 'Industrial' , '100');
