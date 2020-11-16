@@ -110,10 +110,13 @@ insert into DEPARTAMENTO (codigo, nombre) values ('10', 'Financiero');
 insert into DEPARTAMENTO (codigo, nombre) values ('11', 'Compras');
 insert into DEPARTAMENTO (codigo, nombre) values ('12', 'Comite de Direccion');
 insert into DEPARTAMENTO (codigo, nombre) values ('13', 'Direccion General');
-insert into DEPARTAMENTO (codigo, nombre) values ('14', 'Preimpresos');
-
-
-
+insert into DEPARTAMENTO (codigo, nombre) values ('14', 'Call Center');
+insert into DEPARTAMENTO (codigo, nombre) values ('15', 'Limpieza');
+insert into DEPARTAMENTO (codigo, nombre) values ('16', 'Operaciones');
+insert into DEPARTAMENTO (codigo, nombre) values ('17', 'Soporte');
+insert into DEPARTAMENTO (codigo, nombre) values ('18', 'Marketing');
+insert into DEPARTAMENTO (codigo, nombre) values ('19', 'Control de Gestion ');
+insert into DEPARTAMENTO (codigo, nombre) values ('20', 'Servicios y Prestaciones');
 
 
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('001', '50000000' , '2018', '01');
@@ -127,7 +130,15 @@ insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('008', '20
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('009', '175000000' , '2020', '04');
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('010', '75000000' , '2016', '10');
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('011', '87500000' , '2019', '08');
-insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('012', '175000000' , '2018', '11');
+
+insert into SEDE (codigo, nombre, poblacion) values ('101', 'Sede Norte' , '20');
+
+insert into SEDE (codigo, nombre, poblacion) values ('102', 'Sede Sur' , '20');
+
+insert into SEDE (codigo, nombre, poblacion) values ('103', 'Sede Centro' , '20');
+
+insert into SEDE (codigo, nombre, poblacion) values ('104', 'Sede Campestre' , '10');
+
+insert into SEDE (codigo, nombre, poblacion) values ('105', 'Sede  Industrial' , '10');
 
 
-insert into SEDE (codigo, nombre, poblacion) values ('101', 'Industrial' , '100');
