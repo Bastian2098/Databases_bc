@@ -110,6 +110,11 @@ insert into DEPARTAMENTO (codigo, nombre) values ('10', 'Financiero');
 insert into DEPARTAMENTO (codigo, nombre) values ('11', 'Compras');
 insert into DEPARTAMENTO (codigo, nombre) values ('12', 'Comite de Direccion');
 insert into DEPARTAMENTO (codigo, nombre) values ('13', 'Direccion General');
+insert into DEPARTAMENTO (codigo, nombre) values ('14', 'Preimpresos');
+
+
+
+
 
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('001', '50000000' , '2018', '01');
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('002', '100000000' , '2017', '02');
