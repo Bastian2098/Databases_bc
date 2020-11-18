@@ -1,3 +1,6 @@
+
+//CREACION DE TABLAS
+
 create table DEPARTAMENTO(
 	codigo int NOT NULL,
 	nombre varchar(30) NOT NULL,
@@ -52,6 +55,8 @@ create table SED_EMP(
 	fkSede int NOT NULL
 );
 
+//DECLARACION DE RELACIONES (LLAVES FORANEAS)
+
 alter table PRESUPUESTO
 	add constraint fkDepartamento
 	foreign key(fkDepartamento)
@@ -97,6 +102,8 @@ alter table SED_EMP
 	foreign key(fkSede)
 	references SEDE(codigo);
 	
+//INSERCION DE DATOS PARA LA TABLA DEPARTAMENTO
+	
 insert into DEPARTAMENTO (codigo, nombre) values ('01', 'Sistemas');
 insert into DEPARTAMENTO (codigo, nombre) values ('02', 'Administracion');
 insert into DEPARTAMENTO (codigo, nombre) values ('03', 'Logistica');
@@ -119,6 +126,9 @@ insert into DEPARTAMENTO (codigo, nombre) values ('19', 'Control de Gestion ');
 insert into DEPARTAMENTO (codigo, nombre) values ('20', 'Servicios y Prestaciones');
 
 
+//INSERCION DE DATOS PARA LA TABLA PRESUPUESTO
+
+
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('001', '50000000' , '2018', '01');
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('002', '100000000' , '2017', '02');
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('003', '25000000' , '2020', '03');
@@ -131,52 +141,74 @@ insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('009', '17
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('010', '75000000' , '2016', '10');
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('011', '87500000' , '2019', '08');
 
+
+//INSERCION DE DATOS PARA LA TABLA SEDE
+
+
 insert into SEDE (codigo, nombre, poblacion) values ('101', 'Sede Norte', '20');
 insert into SEDE (codigo, nombre, poblacion) values ('102', 'Sede Sur', '20');
 insert into SEDE (codigo, nombre, poblacion) values ('103', 'Sede Centro', '20');
 insert into SEDE (codigo, nombre, poblacion) values ('104', 'Sede Campestre', '10');
 insert into SEDE (codigo, nombre, poblacion) values ('105', 'Sede  Industrial', '10');
 
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('110', 'carlos', '311', '01/01/2020', '01');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('111', 'juan', '312', '01/01/2020', '01');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('112', 'alex', '313', '02/01/2020', '02');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('113', 'andres', '314', '02/01/2020', '02');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('114', 'oscar', '315', '03/01/2020', '03');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('115', 'felipe', '316', '03/01/2020', '03');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('116', 'daniel', '317', '04/01/2020', '04');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('117', 'luis', '318', '04/01/2020', '04');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('118', 'sebastian', '319', '05/01/2020', '05');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('119', 'brandon', '320', '05/01/2020', '05');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('120', 'jorge', '321', '06/01/2020', '06');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('121', 'andrea', '322', '06/01/2020', '06');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('122', 'juana', '323', '07/01/2020', '07');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('123', 'camila', '324', '07/01/2020', '07');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('124', 'luisa', '325', '08/01/2020', '08');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('125', 'alexa', '326', '08/01/2020', '08');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('126', 'elizabeth', '327', '09/01/2020', '09');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('127', 'marixa', '328', '09/01/2020', '09');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('128', 'laura', '329', '10/01/2020', '10');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('129', 'steffany', '330', '10/01/2020', '10');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('130', 'jessica', '331', '11/01/2020', '11');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('131', 'richard', '332', '11/01/2020', '11');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('132', 'alejandro', '333', '12/01/2020', '12');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('133', 'jeisson', '334', '12/01/2020', '12');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('134', 'santiago', '335', '13/01/2020', '13');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('135', 'shammir', '336', '13/01/2020', '13');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('136', 'manuel', '337', '14/01/2020', '14');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('137', 'estiven', '338', '14/01/2020', '14');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('138', 'william', '339', '15/01/2020', '15');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('139', 'camilo', '340', '15/01/2020', '15');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('140', 'maicol', '341', '16/01/2020', '16');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('141', 'ximena', '342', '16/01/2020', '16');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('142', 'rocio', '343', '17/01/2020', '17');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('143', 'leidy', '344', '17/01/2020', '17');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('144', 'maria', '345', '18/01/2020', '18');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('145', 'claudia', '346', '18/01/2020', '18');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('146', 'marcela', '347', '19/01/2020', '19');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('147', 'bety', '348', '19/01/2020', '19');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('148', 'deisy', '349', '20/01/2020', '20');
-insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('149', 'eliz', '350', '20/01/2020', '20');
 
-// :v
+//INSERCION DE DATOS PARA LA TABLA EMPLEADO
+
+
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('110', 'Carlos', '311', '01/01/2020', '01');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('111', 'Juan', '312', '01/01/2020', '01');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('112', 'Alex', '313', '02/01/2020', '02');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('113', 'Andres', '314', '02/01/2020', '02');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('114', 'Oscar', '315', '03/01/2020', '03');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('115', 'Felipe', '316', '03/01/2020', '03');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('116', 'Daniel', '317', '04/01/2020', '04');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('117', 'Luis', '318', '04/01/2020', '04');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('118', 'Sebastian', '319', '05/01/2020', '05');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('119', 'Brandon', '320', '05/01/2020', '05');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('120', 'Jorge', '321', '06/01/2020', '06');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('121', 'Andrea', '322', '06/01/2020', '06');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('122', 'Juana', '323', '07/01/2020', '07');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('123', 'Camila', '324', '07/01/2020', '07');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('124', 'Luisa', '325', '08/01/2020', '08');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('125', 'Alexa', '326', '08/01/2020', '08');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('126', 'Elizabeth', '327', '09/01/2020', '09');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('127', 'Marixa', '328', '09/01/2020', '09');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('128', 'Laura', '329', '10/01/2020', '10');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('129', 'Steffany', '330', '10/01/2020', '10');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('130', 'Jessica', '331', '11/01/2020', '11');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('131', 'Richard', '332', '11/01/2020', '11');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('132', 'Alejandro', '333', '12/01/2020', '12');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('133', 'Jeisson', '334', '12/01/2020', '12');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('134', 'Santiago', '335', '13/01/2020', '13');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('135', 'Shammir', '336', '13/01/2020', '13');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('136', 'Manuel', '337', '14/01/2020', '14'); 
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('137', 'Estiven', '338', '14/01/2020', '14');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('138', 'William', '339', '15/01/2020', '15');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('139', 'Camilo', '340', '15/01/2020', '15');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('140', 'Maicol', '341', '16/01/2020', '16');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('141', 'Ximena', '342', '16/01/2020', '16');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('142', 'Rocio', '343', '17/01/2020', '17');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('143', 'Leidy', '344', '17/01/2020', '17');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('144', 'Maria', '345', '18/01/2020', '18');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('145', 'Claudia', '346', '18/01/2020', '18');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('146', 'Marcela', '347', '19/01/2020', '19');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('147', 'Bety', '348', '19/01/2020', '19');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('148', 'Deisy', '349', '20/01/2020', '20');
+insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('149', 'Eliz', '350', '20/01/2020', '20');
+
+
+//SENTENCIA PARA EXPORTAR DATOS
+
+
+COPY departamento TO '/home/bastian/Desktop/depbdtaller.txt' DELIMITER '|';
+COPY presupuesto TO '/home/bastian/Desktop/prebdtaller.txt' DELIMITER '|';
+COPY sede TO '/home/bastian/Desktop/sedbdtaller.txt' DELIMITER '|';
+COPY empleado TO '/home/bastian/Desktop/empbdtaller.txt' DELIMITER '|';
+
+
+//COMANDOS PARA BACKUP
+
+pg_dump -a bdtaller > /home/bastian/Desktop/backupDatosBdtaller.sql //Datos
+pg_dump -s bdtaller > /home/bastian/Desktop/backupEsquemaBdtaller.sql //Esquema
+pg_dump -C bdtaller > /home/bastian/Desktop/backupDatosEsquemaBdtaller.sql //Datos+Esquema
 
