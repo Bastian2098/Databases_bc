@@ -131,14 +131,10 @@ insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('009', '17
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('010', '75000000' , '2016', '10');
 insert into PRESUPUESTO (codigo, valor, anio, fkDepartamento) values ('011', '87500000' , '2019', '08');
 
-insert into SEDE (codigo, nombre, poblacion) values ('101', 'Sede Norte' , '20');
-
-insert into SEDE (codigo, nombre, poblacion) values ('102', 'Sede Sur' , '20');
-
-insert into SEDE (codigo, nombre, poblacion) values ('103', 'Sede Centro' , '20');
-
-insert into SEDE (codigo, nombre, poblacion) values ('104', 'Sede Campestre' , '10');
-
-insert into SEDE (codigo, nombre, poblacion) values ('105', 'Sede  Industrial' , '10');
+insert into SEDE (codigo, nombre, poblacion) values ('101', 'Sede Norte', '20');
+insert into SEDE (codigo, nombre, poblacion) values ('102', 'Sede Sur', '20');
+insert into SEDE (codigo, nombre, poblacion) values ('103', 'Sede Centro', '20');
+insert into SEDE (codigo, nombre, poblacion) values ('104', 'Sede Campestre', '10');
+insert into SEDE (codigo, nombre, poblacion) values ('105', 'Sede  Industrial', '10');
 
 
