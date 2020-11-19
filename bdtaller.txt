@@ -197,13 +197,40 @@ insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values (
 insert into EMPLEADO (id, nombre, telefono, fecIngreso, fkDepartamento) values ('149', 'Eliz', '350', '20/01/2020', '20');
 
 
-//SENTENCIA PARA EXPORTAR DATOS
+//SENTENCIA PARA EXPORTAR DATOS (PostgreSQL)
 
 
 COPY departamento TO '/home/bastian/Desktop/depbdtaller.txt' DELIMITER '|';
 COPY presupuesto TO '/home/bastian/Desktop/prebdtaller.txt' DELIMITER '|';
 COPY sede TO '/home/bastian/Desktop/sedbdtaller.txt' DELIMITER '|';
 COPY empleado TO '/home/bastian/Desktop/empbdtaller.txt' DELIMITER '|';
+
+
+//SENTENCIA PARA IMPORTAR DATOS (PostgreSQL)
+
+
+COPY departamento (codigo,nombre) FROM '/home/bastian/Desktop/depbdtallermysql.txt' WITH DELIMITER '|';
+COPY presupuesto (codigo, valor, anio, fkDepartamento) FROM '/home/bastian/Desktop/depbdtallermysql.txt' WITH DELIMITER '|';
+COPY sede (codigo, nombre, poblacion) FROM '/home/bastian/Desktop/depbdtallermysql.txt' WITH DELIMITER '|';
+COPY departamento (id, nombre, telefono, fecIngreso, fkDepartamento) FROM '/home/bastian/Desktop/depbdtallermysql.txt' WITH DELIMITER '|';
+
+
+//SENTENCIA PARA EXPORTAR DATOS (MySQL)
+
+
+select * from DEPARTAMENTO into outfile '/var/lib/mysql-files/depbdtallermysql.txt' fields terminated by '|' lines terminated by '\n';
+select * from PRESUPUESTO into outfile '/var/lib/mysql-files/prebdtallermysql.txt' fields terminated by '|' lines terminated by '\n';
+select * from SEDE into outfile '/var/lib/mysql-files/sedbdtallermysql.txt' fields terminated by '|' lines terminated by '\n';
+select * from EMPLEADO into outfile '/var/lib/mysql-files/empbdtallermysql.txt' fields terminated by '|' lines terminated by '\n';
+
+
+//SENTENCIA PARA IMPORTAR DATOS (MySQL)
+
+load data infile '/var/lib/mysql-files/depbdtaller.txt' into table DEPARTAMENTO fields terminated by '|' lines terminated by '\n' (codigo,nombre);
+load data infile '/var/lib/mysql-files/depbdtaller.txt' into table PRESUPUESTO fields terminated by '|' lines terminated by '\n' (codigo, valor, anio, fkDepartamento);
+load data infile '/var/lib/mysql-files/depbdtaller.txt' into table SEDE fields terminated by '|' lines terminated by '\n' (codigo, nombre, poblacion);
+load data infile '/var/lib/mysql-files/depbdtaller.txt' into table EMPLEADO fields terminated by '|' lines terminated by '\n' (id, nombre, telefono, fecIngreso, fkDepartamento);
+
 
 
 //COMANDOS PARA BACKUP
