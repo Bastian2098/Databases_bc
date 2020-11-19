@@ -210,9 +210,9 @@ COPY empleado TO '/home/bastian/Desktop/empbdtaller.txt' DELIMITER '|';
 
 
 COPY departamento (codigo,nombre) FROM '/home/bastian/Desktop/depbdtallermysql.txt' WITH DELIMITER '|';
-COPY presupuesto (codigo, valor, anio, fkDepartamento) FROM '/home/bastian/Desktop/depbdtallermysql.txt' WITH DELIMITER '|';
-COPY sede (codigo, nombre, poblacion) FROM '/home/bastian/Desktop/depbdtallermysql.txt' WITH DELIMITER '|';
-COPY departamento (id, nombre, telefono, fecIngreso, fkDepartamento) FROM '/home/bastian/Desktop/depbdtallermysql.txt' WITH DELIMITER '|';
+COPY presupuesto (codigo, valor, anio, fkDepartamento) FROM '/home/bastian/Desktop/prebdtallermysql.txt' WITH DELIMITER '|';
+COPY sede (codigo, nombre, poblacion) FROM '/home/bastian/Desktop/sedbdtallermysql.txt' WITH DELIMITER '|';
+COPY empleado(id, nombre, telefono, fecIngreso, fkDepartamento) FROM '/home/bastian/Desktop/empbdtallermysql.txt' WITH DELIMITER '|';
 
 
 //SENTENCIA PARA EXPORTAR DATOS (MySQL)
@@ -227,9 +227,9 @@ select * from EMPLEADO into outfile '/var/lib/mysql-files/empbdtallermysql.txt' 
 //SENTENCIA PARA IMPORTAR DATOS (MySQL)
 
 load data infile '/var/lib/mysql-files/depbdtaller.txt' into table DEPARTAMENTO fields terminated by '|' lines terminated by '\n' (codigo,nombre);
-load data infile '/var/lib/mysql-files/depbdtaller.txt' into table PRESUPUESTO fields terminated by '|' lines terminated by '\n' (codigo, valor, anio, fkDepartamento);
-load data infile '/var/lib/mysql-files/depbdtaller.txt' into table SEDE fields terminated by '|' lines terminated by '\n' (codigo, nombre, poblacion);
-load data infile '/var/lib/mysql-files/depbdtaller.txt' into table EMPLEADO fields terminated by '|' lines terminated by '\n' (id, nombre, telefono, fecIngreso, fkDepartamento);
+load data infile '/var/lib/mysql-files/prebdtaller.txt' into table PRESUPUESTO fields terminated by '|' lines terminated by '\n' (codigo, valor, anio, fkDepartamento);
+load data infile '/var/lib/mysql-files/sedbdtaller.txt' into table SEDE fields terminated by '|' lines terminated by '\n' (codigo, nombre, poblacion);
+load data infile '/var/lib/mysql-files/empbdtaller.txt' into table EMPLEADO fields terminated by '|' lines terminated by '\n' (id, nombre, telefono, fecIngreso, fkDepartamento);
 
 
 
